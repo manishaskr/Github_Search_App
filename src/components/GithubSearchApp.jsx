@@ -26,7 +26,30 @@ const GithubSearchApp = () => {
 
   return (
     <>
-      <div className="conatiner mt-6">
+       <div className="container mt-6">
+                <div className="row">
+                    <div className="col">
+                        <p className="display-3 heading">Github Profile Search</p>
+                        <p className="lead font-weight-bold">Search a Github Profile to see his/her activities</p>
+                    </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                        <form className="form-inline" onSubmit={submitSearch}>
+                            <div className="form-group">
+                                <input
+                                    style={{fontWeight:'bold' ,width:'600px'}}
+                                    value={githubUser}
+                                    
+                                    onChange={e => setGithubUser(e.target.value)}
+                                    size="25" type="text" className="form-control" placeholder="Github Username"/>
+                            </div>
+                            <input style={{background:'purple', borderRadius:'10%'}} type="submit" className="btn btn-secondary btn-sm" value="Search"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+      {/* <div className="conatiner mt-6">
         <div className="row">
           <div className="col">
             <p className="display-3">Github Profile Search</p>
@@ -49,6 +72,7 @@ const GithubSearchApp = () => {
               />
 
               <input
+                style={{ fontWeight: "bold" }}
                 type="submit"
                 value="Search"
                 className="btn btn-secondary btn-sm"
@@ -56,7 +80,7 @@ const GithubSearchApp = () => {
             </form>
           </div>
         </div>
-      </div>
+      </div> */}
       <div>{ Object.keys(githubProfile).length>0 &&
         <GithubProfile data={githubProfile} />
       }
